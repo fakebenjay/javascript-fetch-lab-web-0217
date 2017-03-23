@@ -37,14 +37,28 @@
         <div id="issues"></div>
       </div>
     </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script src="handlebars.js"></script>
     <script src="index.js"></script>
     <script id="repo-template" type="text/x-handlebars-template">
       <h3>Forked Successfully!</h3>
-      <!--fill me in with templatey goodness-->
+      <ul>
+        <li>
+          <h3>{{full_name}}</h3>
+          <p><a href="{{html_url}}">{{html_url}}</a></p>
+        </li>
+      </ul>
     </script>
     <script id="issues-template" type="text/x-handlebars-template">
-      <!--fill me in with templatey goodness-->
+      <ul>
+        {{#each this}}
+        <li>
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+          <p><a href="{{html_url}}">{{url}}</a></p>
+        </li>
+        {{/each}}
+      </ul>
     </script>
   </body>
 </html>
